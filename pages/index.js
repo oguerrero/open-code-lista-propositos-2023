@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import ResolutionActions from './components/ResolutionActions'
 
 export default function Home () {
   return (
@@ -9,9 +10,11 @@ export default function Home () {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className='flex flex-col justify-between items-center p-24 min-h-screen'>
         <div className='flex m-4'>
-          <div className='w-80'>Izq</div>
+          <div className='w-80'>
+            <ResolutionActions />
+          </div>
           <div>Der</div>
         </div>
       </main>
