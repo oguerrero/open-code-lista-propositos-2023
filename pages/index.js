@@ -1,15 +1,39 @@
 import Head from 'next/head'
 import ResolutionActions from './components/ResolutionActions'
+import { getAuth } from 'firebase/auth'
+import Navbar from './components/Navbar'
 
-export default function Home () {
+export default function Home() {
+
+  const auth = getAuth()
+  const user = auth.currentUser
+
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    // ...
+  } else {
+    // No user is signed in.
+  }
+
   return (
     <>
       <Head>
         <title>Propositos 2023</title>
-        <meta name="description" content="Lista de Propositos para 2023" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name='description'
+          content='Lista de Propositos para 2023'
+        />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1'
+        />
+        <link
+          rel='icon'
+          href='/favicon.ico'
+        />
       </Head>
+      <Navbar />
       <main className='flex flex-col justify-between items-center p-24 min-h-screen'>
         <div className='flex m-4'>
           <div className='w-80'>
