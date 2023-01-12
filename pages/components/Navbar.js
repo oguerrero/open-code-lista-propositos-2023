@@ -1,8 +1,15 @@
-import { signOut } from 'firebase/auth'
+import { GithubAuthProvider, signOut } from 'firebase/auth'
 import Link from 'next/link'
 import { auth } from '../../firebaseConfig'
 
-export default function Navbar() {
+export default function Navbar () {
+
+  const provider = new GithubAuthProvider();
+
+  const handleLogin = () => {
+    signInWithRedirect(auth, provider);
+  }
+
   const user = auth.currentUser
 
   if (user) {
@@ -23,13 +30,13 @@ export default function Navbar() {
 
   return (
     <nav className='w-full h-8 px-8 py-2 flex flex-row'>
-      {user && <button onClick={signOut}>Sign Out</button>}
-      {!user && (
+      { user && <button onClick={ signOut }>Sign Out</button> }
+      { !user && (
         <div className='flex flex-row gap-4 justify-end w-full'>
-          <Link href='/login'>Login</Link>
-          <Link href='/register'>Register</Link>
+  
+          <button onClick={ handleLogin } href='/login'>Login</button>
         </div>
-      )}
+      ) }
     </nav>
   )
 }
