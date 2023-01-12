@@ -1,5 +1,4 @@
-import { GithubAuthProvider, signOut } from 'firebase/auth'
-import Link from 'next/link'
+import { GithubAuthProvider, signInWithRedirect, signOut } from 'firebase/auth'
 import { auth } from '../../firebaseConfig'
 
 export default function Navbar () {
