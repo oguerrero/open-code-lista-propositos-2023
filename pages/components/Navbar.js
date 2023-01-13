@@ -1,12 +1,15 @@
 import { supabase } from "../../supabaseConfig"
 
 export default function Navbar () {
-  let user = ''
+  const [session, setSession] = useState()
+  const [user, setUser] = useState()
   const handleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github'
     })
-    user = data
+    const { session, user } = data
+    setSession(session)
+    setUser(user)
   }
 
   const handleSignOut = async () => {
@@ -15,9 +18,10 @@ export default function Navbar () {
 
   return (
     <nav className='w-full h-8 px-8 py-2 flex flex-row'>
+      { session }
       { user }
-      { user && <button onClick={ handleSignOut }>Sign Out</button> }
-      { !user && (
+      { session && <button onClick={ handleSignOut }>Sign Out</button> }
+      { !session && (
         <div className='flex flex-row gap-4 justify-end w-full'>
           <button
             onClick={ handleLogin }
