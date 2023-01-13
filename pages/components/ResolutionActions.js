@@ -5,12 +5,10 @@ export default function ResolutionActions() {
   const [isInputVisible, setIsInputVisible] = useState(false)
   const [resolutionText, setResolutionText] = useState('')
 
-  const dbInstance = collection(firestore, 'resolutions')
 
   const inputToogle = () => setIsInputVisible(!isInputVisible)
 
   const saveResolution = () => {
-    addDoc(dbInstance, { resolutionText: resolutionText })
   }
 
   return (
