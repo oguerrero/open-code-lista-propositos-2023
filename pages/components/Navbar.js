@@ -1,3 +1,5 @@
+import { supabase } from "../../supabaseConfig"
+
 export default function Navbar() {
   const handleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({

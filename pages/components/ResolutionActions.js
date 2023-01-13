@@ -1,10 +1,6 @@
 // REACT
 import { useState } from 'react'
 
-// FIRESTORE
-import { app, firestore } from '../../firebaseConfig'
-import { collection, addDoc } from 'firebase/firestore'
-
 export default function ResolutionActions() {
   const [isInputVisible, setIsInputVisible] = useState(false)
   const [resolutionText, setResolutionText] = useState('')

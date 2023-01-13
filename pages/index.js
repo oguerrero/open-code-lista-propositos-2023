@@ -3,8 +3,6 @@ import ResolutionActions from './components/ResolutionActions'
 import Navbar from './components/Navbar'
 
 export default function Home() {
-
-
   return (
     <>
       <Head>
