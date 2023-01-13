@@ -1,20 +1,9 @@
 import Head from 'next/head'
 import ResolutionActions from './components/ResolutionActions'
-import { getAuth } from 'firebase/auth'
 import Navbar from './components/Navbar'
 
 export default function Home() {
 
-  const auth = getAuth()
-  const user = auth.currentUser
-
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    // ...
-  } else {
-    // No user is signed in.
-  }
 
   return (
     <>
