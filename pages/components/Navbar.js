@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { supabase } from "../../supabaseConfig"
 
 export default function Navbar () {
