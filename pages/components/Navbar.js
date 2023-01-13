@@ -9,6 +9,7 @@ export default function Navbar () {
       provider: 'github'
     })
     const { session, user } = data
+    console.log(data)
     setSession(session)
     setUser(user)
   }
@@ -19,8 +20,6 @@ export default function Navbar () {
 
   return (
     <nav className='w-full h-8 px-8 py-2 flex flex-row'>
-      { session }
-      { user }
       { session && <button onClick={ handleSignOut }>Sign Out</button> }
       { !session && (
         <div className='flex flex-row gap-4 justify-end w-full'>
