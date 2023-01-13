@@ -16,8 +16,8 @@ export default function Navbar() {
 
   return (
     <nav className='w-full h-8 px-8 py-2 flex flex-row'>
-      {user && <button onClick={handleSignOut}>Sign Out</button>}
-      {!user && (
+      {data && <button onClick={handleSignOut}>Sign Out</button>}
+      {!data && (
         <div className='flex flex-row gap-4 justify-end w-full'>
           <button
             onClick={handleLogin}
