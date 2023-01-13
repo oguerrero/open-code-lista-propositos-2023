@@ -5,7 +5,6 @@ export default function ResolutionActions() {
   const [isInputVisible, setIsInputVisible] = useState(false)
   const [resolutionText, setResolutionText] = useState('')
 
-
   const inputToogle = () => setIsInputVisible(!isInputVisible)
 
   const saveResolution = () => {

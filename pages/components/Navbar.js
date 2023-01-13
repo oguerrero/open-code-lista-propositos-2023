@@ -1,6 +1,6 @@
 import { supabase } from "../../supabaseConfig"
 
-export default function Navbar() {
+export default function Navbar () {
   let user = ''
   const handleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
@@ -15,16 +15,17 @@ export default function Navbar() {
 
   return (
     <nav className='w-full h-8 px-8 py-2 flex flex-row'>
-      {user && <button onClick={handleSignOut}>Sign Out</button>}
-      {!user && (
+      { user }
+      { user && <button onClick={ handleSignOut }>Sign Out</button> }
+      { !user && (
         <div className='flex flex-row gap-4 justify-end w-full'>
           <button
-            onClick={handleLogin}
+            onClick={ handleLogin }
             href='/login'>
             Login
           </button>
         </div>
-      )}
+      ) }
     </nav>
   )
 }
